@@ -1,0 +1,9 @@
+.alert{
+    background: darkorange;
+}
+.alert-success{
+    background: green;
+}
+.alert-danger{
+    background: red;
+}

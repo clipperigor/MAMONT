@@ -1,0 +1,72 @@
+<mat-sidenav-container >
+<!--  Объект управления навигатором-->
+  <mat-sidenav #drawer fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === true">
+
+    <mat-toolbar color="primary">
+
+      <button [hidden]="!drawer.opened"   (click)="drawer.toggle()">
+      <mat-icon aria-label="Главное меню">menu</mat-icon>
+      </button>
+
+      <h1>{{TITLE}}</h1>
+
+    </mat-toolbar>
+    <mat-nav-list>
+      <app-main-menu></app-main-menu>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+      <button  [hidden]="drawer.opened"   (click)="drawer.toggle()">
+        <mat-icon aria-label="Главное меню">menu</mat-icon>
+      </button>
+
+
+      <mat-toolbar color="primary">
+        <button mat-button routerLink="/">
+          <mat-icon>home</mat-icon>
+          <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная</a></button>
+        <button mat-button (click)="goTimeTable()">
+          <mat-icon>calendar_today</mat-icon>
+          График
+        </button>
+        <button mat-button routerLink="/about">
+          <mat-icon>face</mat-icon>
+          <a routerLinkActive="active">О себе</a></button>
+        <button mat-button routerLink="/contacts">
+          <mat-icon>contacts</mat-icon>
+          <a routerLinkActive="active">Контакты</a></button>
+
+        <div *ngIf="currentUser==null">
+          <button mat-button routerLink="/login">
+            <a routerLinkActive="login">
+              <mat-icon>account_box</mat-icon>
+              Вход</a>
+          </button>
+        </div>
+        <div *ngIf="currentUser!=null">
+          <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            Выход: {{currentUser|userFullname}}
+          </button>
+
+
+        </div>
+        <span class="filler"></span>
+
+
+        <div (click)="openServerInfo()">{{timeService.getServerData().now| date:'dd.MM.yyyy HH:mm' }}</div>
+      </mat-toolbar>
+
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

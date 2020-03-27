@@ -1,0 +1,24 @@
+<div>
+    <p>
+      <span>{{data.now}}</span>
+      <br/>
+      <span>Пользователь БД: {{data.user}}</span>
+      <br/>
+      <span>Версия БД: {{data.version}}</span>
+      <br/>
+      <span>Хост: {{data.address}}</span>
+      <br/>
+      <span>Имя БД: {{data.database}}</span>
+      <br/>
+      <span>Текущий пользователь: {{ usr}}</span>
+      <br/>
+      <span>Агент: {{ agent.shortname}}</span>
+       <br/>
+      <span>Агент( полное имя ): {{ agent.fullname}}</span>
+       <br/>
+      <span>Операционная система (on fonts): {{ clientInfo.osByFonts}}</span>
+       <br/>
+      <span>Операционная система (window.navigator.userAgent): {{ clientInfo.os}}</span>
+    </p>
+    <Button (click)="close()">Закрыть</Button>
+  </div>

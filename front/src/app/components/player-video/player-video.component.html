@@ -1,0 +1,22 @@
+<!--Следующие строки обеспечат перемещение компонента в
+контейнере всплывающего окна
+mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane"
+-->
+<div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+
+<button (click)="close()">Закрыть</button>
+
+  <mat-video title="{{data.pathVideo}}"
+             [autoplay]="true"
+             [preload]="true"
+             [fullscreen]="true"
+             [download]="false" color="accent"
+             spinner="dot" poster="../../../assets/igor.jpg">
+    <source matVideoSource
+            src="/getvideo/?path={{data.pathVideo}}" type="video/mp4">
+<!--    <source src="tutorial.webm" type="video/webm">-->
+    <track matVideoTrack src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+    <track src="subtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+  </mat-video>
+<button (click)="close()">Закрыть</button>
+</div>

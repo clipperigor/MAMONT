@@ -1,0 +1,13 @@
+table{
+  height: auto;
+  max-height: 80%;
+  overflow: auto;
+  display: block;
+}
+td{
+  border:1px solid ;
+}
+.container{
+  width: auto;
+  overflow: scroll;
+}

@@ -1,0 +1,35 @@
+[
+
+  {
+    "context": [
+      "/node/"
+    ],
+    "target": "http://192.168.56.200/",
+    "secure": true
+  },
+
+  {
+    "context": [
+      "/python/"
+    ],
+    "target": "http://192.168.56.200/",
+    "secure": true
+  },
+
+  {
+    "context": [
+      "/video/"
+    ],
+    "target": "http://192.168.56.200/video/",
+    "secure": true
+  },
+  {
+    "context": [
+      "/getvideo/"
+    ],
+    "target": "http://192.168.113.133/",
+    "secure": true
+  }
+
+
+]

@@ -1,0 +1,92 @@
+/*Добавлена строка по рекомендации использования проирывателя Video
+https://www.npmjs.com/package/mat-video
+*/
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*Элемент активного меню*/
+.active{background: aqua; font-weight: bold; color: black }
+
+/*Сместить содержимое вправо (см app.component.html)*/
+.filler {
+  flex: 1 1 auto;
+}
+
+#footer {
+  position: fixed; /* Фиксированное положение */
+  left: 0; bottom: 0; /* Левый нижний угол */
+  padding: 10px; /* Поля вокруг текста */
+  background: #3f51b5; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  width: 100%; /* Ширина слоя */
+}
+
+.topic{
+  background: #3fffff;
+  color: black;
+  font-weight: bold;
+}
+.topic-odd{
+  background: #c5cae9;
+  color: black;
+  font-weight: bold;
+}
+
+.topic-selected{
+  background: #1d96ff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.infoPanel{
+  background: #ffffffff;
+  color: black;
+  font-weight: bold;
+
+}
+.invalid-feedback{
+  color:red;
+}
+.is-invalid{
+  background: red;
+}
+.panel-info{
+  background: aliceblue;
+  color: black;
+}
+.panel-error{
+  background: black;
+  color: white;
+}
+
+/*Контейнер для диалоговых окон*/
+.my-dialog .mat-dialog-container {
+  height: 400px;
+  width: 850px;
+  border-radius: 10px;
+  padding: 0;
+  background: lightcyan;
+  color: #039be5;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+   max-height: 70vh !important;
+}
+
+
+
+
+
+
+
+
+
+/* курсор - палец*/
+.cursor-pointer{
+  cursor: pointer;
+}
+

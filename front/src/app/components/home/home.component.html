@@ -1,0 +1,55 @@
+<div>
+<table data-role="table" id="table-1" class="ui-responsive">
+  <tbody>
+  <table>
+    <tbody>
+    <tr *ngFor="let ref of refs ; let i=index; let odd=odd" [class.topic]="odd"  [class.topic-odd]="!odd">
+      <!--td >{{i+1}}</td-->
+      <td>
+        <a href="{{ref.ref}}">{{ref.value}}</a>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <tr>
+    <td>
+      <button mat-button routerLink="/mamont"  >
+      <img src="../../../assets/igor.jpg" alt="Домашняя лаборатория"
+             width="440" height="300"/>
+      </button>
+    </td>
+     <td>
+      <table>
+        <tbody>
+        <tr *ngFor="let topic of topics ; let i=index; let odd=odd"
+            [class.topic]="odd"  [class.topic-odd]="!odd" [class.topic-selected]="topic.topic==topicName"
+            (mouseover)="topicName=topic.topic"
+            (click)="getTopicInfo(i)"  >
+          <td >{{i+1}}</td>
+          <td>
+            {{topic.topic}}
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div align="left">
+  <a href="http://www3.clustrmaps.com/counter/maps.php?url=http://mironchik.com"
+     id="clustrMapsLink"><img src="http://www3.clustrmaps.com/counter/index2.php?
+url=http://mironchik.com" style="border:0px;" alt="Locations of visitors to this
+page" title="Locations of visitors to this page" id="clustrMapsImg"
+                              onerror="this.onerror=null;
+this.src='http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg';
+document.getElementById('clustrMapsLink').href='http://www2.clustrmaps.com';" />
+  </a>
+</div>
+  <div>
+
+  </div>
+</div>

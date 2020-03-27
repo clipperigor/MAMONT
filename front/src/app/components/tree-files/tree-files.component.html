@@ -1,0 +1,49 @@
+<!--Следующие строки обеспечат перемещение компонента в
+контейнере всплывающего окна
+mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane"
+-->
+<div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+
+<!--Закрытие окна в самом окне -ts файл-->
+<button (click)="close()">Закрыть</button>
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node " [class.topic]="1==1" matTreeNodePadding>
+    <button mat-icon-button disabled></button>
+<!--    Отображаем узел - Детку-->
+    <mat-icon *ngIf="node.item.substr(node.item.lastIndexOf('.'))==='.avi'||
+                  node.item.substr(node.item.lastIndexOf('.'))==='.mkv'" >movie</mat-icon>
+    <mat-icon *ngIf="node.item.substr(node.item.lastIndexOf('.'))==='.mp4'">cloud_download</mat-icon>
+    <button  (click)="getVideo(node.item)">
+
+      {{node.item.substr(node.item.lastIndexOf("/")+1)}}
+    </button>
+    <button *ngIf="node.item.substr(node.item.lastIndexOf('.'))==='.mp4'"
+            (click)="getVideoStream(node.item)">
+      <mat-icon>slideshow</mat-icon>
+    </button>
+  </mat-tree-node>
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+
+    <button mat-icon-button
+            [attr.aria-label]="'toggle ' + node.filename" matTreeNodeToggle>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+<!--Отображаем корневой узел-->
+    <div *ngIf="node.level===0">
+      Список видеозаписей по годам
+    </div>
+<!--    Все остальные узлы с Детками-->
+    <div *ngIf="node.level>0">
+      {{node.item.substr(node.item.lastIndexOf("/")+1)}}
+    </div>
+    <mat-progress-bar *ngIf="node.isLoading"
+                      mode="determinate"
+                      class="example-tree-progress-bar"></mat-progress-bar>
+  </mat-tree-node>
+</mat-tree>
+  <button (click)="close()">Закрыть</button>
+
+</div>

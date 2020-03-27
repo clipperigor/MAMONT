@@ -1,0 +1,25 @@
+<div>
+  <div class="panel-error" *ngIf="mamontsensorsService.data.error">
+    Ошибка!!! {{mamontsensorsService.data.error}}
+  </div>
+  <div *ngIf="mamontsensorsService.data.length>0">
+    <table class="container">
+      <tbody>
+      <tr *ngFor="let ref of mamontsensorsService.data ; let i=index; let odd=odd" [class.topic]="odd"
+          [class.topic-odd]="!odd">
+        <!--td >{{i+1}}</td-->
+        <td>
+          {{ref.title}}
+        </td>
+        <td>
+          {{ref.value}}
+        </td>
+        <td>
+          {{ref.date|date:   'dd.MM.yyyy HH:mm:ss'}}
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

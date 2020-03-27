@@ -1,0 +1,38 @@
+[
+
+  {
+    "context": [
+      "/node/info"
+    ],
+    "target": "http://192.168.56.200",
+    "secure": true
+  },
+  {
+    "context": [
+      "/node/users"
+    ],
+    "target": "http://192.168.56.200",
+    "secure": true
+  },
+  {
+    "context": [
+      "/node/users/register"
+    ],
+    "target": "http://192.168.56.200",
+    "secure": true
+  },
+  {
+    "context": [
+      "/node/mamontsensors"
+    ],
+    "target": "http://192.168.56.200",
+    "secure": true
+  },
+  {
+    "context": [
+      "/python"
+    ],
+    "target": "http://192.168.56.200",
+    "secure": true
+  }
+]

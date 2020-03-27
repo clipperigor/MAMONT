@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a class="cursor-pointer" [matMenuTriggerFor]="menuEduc" >
+      <mat-icon>more_vert</mat-icon>
+      Для учебных центров
+    </a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <a class="cursor-pointer" [matMenuTriggerFor]="studentMenu" ><mat-icon>more_vert</mat-icon>
+      Для студентов
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!--<button mat-button [matMenuTriggerFor]="menu">-->
+<!--  <mat-icon>view_headline</mat-icon> {{TITLE}}-->
+<!--</button>-->
+<mat-menu #menuEduc="matMenu">
+
+  <button mat-menu-item [matMenuTriggerFor]="content">Описание курсов</button>
+  <button mat-menu-item [matMenuTriggerFor]="selectedfiles">Выбранные файлы</button>
+
+</mat-menu>
+
+<mat-menu #content="matMenu">
+
+  <div *ngIf="coursesService.data">
+    <button *ngFor="let cource of coursesService.data ; let i=index; let odd=odd "
+            [class.topic]="odd" [class.topic-odd]="!odd" [class.topic-selected]="cource.directory"
+            mat-menu-item (click)="getFileURL(cource.path)"
+            [disabled]="cource.directory"
+    >
+      <mat-icon *ngIf="cource.start">collections</mat-icon>
+      <mat-icon *ngIf="! cource.directory">cloud_download</mat-icon>
+      <mat-icon *ngIf="cource.directory  && (!cource.start)">folder</mat-icon>
+      {{cource.name}}
+    </button>
+  </div>
+</mat-menu>
+
+
+<mat-menu #selectedfiles="matMenu">
+  <div>
+    <li *ngFor="let course of coursesService.selectedData ; let i=index;" [class.topic-selected]="course"
+        mat-menu-item>{{course.substr(course.lastIndexOf("/") + 1)}}</li>
+  </div>
+
+  <button (click)="coursesService.selectedData=[]">Удалить список</button>
+</mat-menu>
+
+<mat-menu #studentMenu="matMenu">
+  <button mat-menu-item (click)="treefiles()">Видеозаписи курсов</button>
+</mat-menu>
+
+
+
