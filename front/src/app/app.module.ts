@@ -42,14 +42,14 @@ import { MamontComponent } from './components/mamont/mamont.component';
 import {MamontsensorsService} from './services/mamontsensors.service';
 import { UserFullnamePipe } from './pipes/user-fullname.pipe';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { TreeFilesComponent } from './components/tree-files/tree-files.component';
 import {MatTreeModule} from '@angular/material/tree';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
 import { PlayerVideoComponent } from './components/player-video/player-video.component';
-import {InfoServerClientComponent} from "./components/info-server-client/info-server-client.component";
+import {InfoServerClientComponent} from './components/info-server-client/info-server-client.component';
+import { TreeFilesVideoComponent } from './components/tree-files-video/tree-files-video.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +64,11 @@ import {InfoServerClientComponent} from "./components/info-server-client/info-se
       MamontComponent,
       UserFullnamePipe,
       MainMenuComponent,
-      TreeFilesComponent,
+
       NotFoundComponent,
       PlayerVideoComponent,
       InfoServerClientComponent,
+      TreeFilesVideoComponent,
   ],
   imports: [
     BrowserModule,

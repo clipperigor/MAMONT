@@ -1,12 +1,3 @@
-<!--Следующие строки обеспечат перемещение компонента в
-контейнере всплывающего окна
-mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane"
--->
-<div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">
-
-<!--Закрытие окна в самом окне -ts файл-->
-<button (click)="close()">Закрыть</button>
-
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node " [class.topic]="1==1" matTreeNodePadding>
     <button mat-icon-button disabled></button>
@@ -32,7 +23,7 @@ mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane"
       </mat-icon>
     </button>
 <!--Отображаем корневой узел-->
-    <div *ngIf="node.level===0">
+    <div class="active" *ngIf="node.level===0">
       Список видеозаписей по годам
     </div>
 <!--    Все остальные узлы с Детками-->
@@ -44,6 +35,3 @@ mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane"
                       class="example-tree-progress-bar"></mat-progress-bar>
   </mat-tree-node>
 </mat-tree>
-  <button (click)="close()">Закрыть</button>
-
-</div>

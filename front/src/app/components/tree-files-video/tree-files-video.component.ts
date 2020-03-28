@@ -1,3 +1,4 @@
+
 import {Component, NgZone, OnInit} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {CollectionViewer, SelectionChange, DataSource} from '@angular/cdk/collections';
@@ -32,8 +33,9 @@ export class DynamicDatabase {
   /** Инициализируем данные для корневого узла */
   initialData(): DynamicFlatNode[] {
     // console.log('---initData----');
-    this.getData(this.rootLevelNodes[0]);
-    return this.rootLevelNodes.map(name => new DynamicFlatNode(name, 0, true));
+  this.getData(this.rootLevelNodes[0]);
+  return this.rootLevelNodes.map(name => new DynamicFlatNode(name, 0, true, true));
+
   }
   // Получаем данные с REST сервера
   async getData(root: string) {
@@ -128,19 +130,20 @@ export class DynamicDataSource implements DataSource<DynamicFlatNode> {
 
 
 @Component({
-  selector: 'app-tree-files',
-  templateUrl: './tree-files.component.html',
-  styleUrls: ['./tree-files.component.css']
+  selector: 'app-tree-files-video',
+  templateUrl: './tree-files-video.component.html',
+  styleUrls: ['./tree-files-video.component.css']
 })
-export class TreeFilesComponent implements OnInit {
+
+export class TreeFilesVideoComponent implements OnInit {
 
   constructor(
-    private dialogRef: MatDialogRef<TreeFilesComponent>,
+
     database: DynamicDatabase ,
     private messageService: MessageService,
     private zone: NgZone,
     private router: Router,
-    private playVideoDialog: MatDialog
+    private playVideoDialog: MatDialog,
   ) {
     this.treeControl = new FlatTreeControl<DynamicFlatNode>(this.getLevel, this.isExpandable);
     this.dataSource = new DynamicDataSource(this.treeControl, database);
@@ -169,9 +172,6 @@ hasChild = (_: number, _nodeData: DynamicFlatNode) => {
 
 
 
-close() {
-    this.dialogRef.close();
-  }
 
 ngOnInit(): void {
 }
@@ -205,3 +205,4 @@ ngOnInit(): void {
       this.playVideoDialog.open(PlayerVideoComponent, dialogConfig);
     }
 }
+

@@ -22,11 +22,11 @@
     </td>
      <td>
       <table>
-        <tbody>
+        <tbody routerLink="/treevideo">
         <tr *ngFor="let topic of topics ; let i=index; let odd=odd"
             [class.topic]="odd"  [class.topic-odd]="!odd" [class.topic-selected]="topic.topic==topicName"
-            (mouseover)="topicName=topic.topic"
-            (click)="getTopicInfo(i)"  >
+            (mouseover)="topicName=topic.topic">
+<!--      (click)="getTopicInfo(i)"         -->
           <td >{{i+1}}</td>
           <td>
             {{topic.topic}}

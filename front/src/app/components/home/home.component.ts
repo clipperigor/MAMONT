@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       {topic: 'Проведение курсов на площадке клиента', content: 'Курсы, которые проводятся на площадке клиента'},
     ];
     topicName = '';
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,) { }
 
   ngOnInit() {
   }
