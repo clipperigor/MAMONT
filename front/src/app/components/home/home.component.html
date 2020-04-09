@@ -22,12 +22,20 @@
     </td>
      <td>
       <table>
-        <tbody routerLink="/treevideo">
+        <tbody routerLink="/news">
+        <tr><td> </td>
+        <td class="active invalid-feedback">Стоп гад! Серия бесплатных вебинаров - Оставайтесь Дома!</td>
+        </tr>
+        <tr><td> </td>
+            <td class="topic"><a routerLink="/treevideo" >Доступ ко всем лекциям (не все доступны - нужно согласие!)</a></td>
+        </tr>
+
         <tr *ngFor="let topic of topics ; let i=index; let odd=odd"
             [class.topic]="odd"  [class.topic-odd]="!odd" [class.topic-selected]="topic.topic==topicName"
             (mouseover)="topicName=topic.topic">
 <!--      (click)="getTopicInfo(i)"         -->
-          <td >{{i+1}}</td>
+<!--          <td >{{i+1}}</td>-->
+            <td> </td>
           <td>
             {{topic.topic}}
           </td>

@@ -50,6 +50,7 @@ import { MatVideoModule } from 'mat-video';
 import { PlayerVideoComponent } from './components/player-video/player-video.component';
 import {InfoServerClientComponent} from './components/info-server-client/info-server-client.component';
 import { TreeFilesVideoComponent } from './components/tree-files-video/tree-files-video.component';
+import { NewsComponent } from './components/news/news.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { TreeFilesVideoComponent } from './components/tree-files-video/tree-file
       PlayerVideoComponent,
       InfoServerClientComponent,
       TreeFilesVideoComponent,
+      NewsComponent,
   ],
   imports: [
     BrowserModule,

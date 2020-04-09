@@ -22,18 +22,21 @@ export class HomeComponent implements OnInit {
 
       ];
     public topics: Topics[] = [
-      { topic: 'Oracle - PL/SQL, SQL, - разработка PL/SQL конструкций и запросов', content: 'Курсы Oracle'},
-      {topic: 'Языки программирования Java, JavaScript (ECMAScript) - NodeJS, Python', content: 'Курсы по Python'},
-      { topic: 'Разработка WEB приложений - ReactJS, Angular,Java Server Faces (JSF), Application Development Framework (ADF)',
-        content: 'Курсы По разработке Web приложений'},
-      {topic: 'Администрирование баз данных Oracle, Postgresql', content: 'Курсы по администрированию серверов баз данных, настройка серверов'},
-      { topic: 'Администрирование серверов приложений Oracle Weblogic, IBM Sphere, RedHat Jboss-Wildfly', content: 'Курсы по администрированию серверов приложений'},
-      {topic: 'Разработка корпоративных отчетов - Oracle BI', content: 'Курсы по разработке информационных витрин и отчетов в среде Oracle BI'},
-      {topic: 'Разработка курсов под требования заказчика', content: 'Курсы, содержание которых определяет заказчик'},
-      {topic: 'Проведение курсов на площадке клиента', content: 'Курсы, которые проводятся на площадке клиента'},
+      { topic: 'Следующая лекция состоится в понедельник 13 апреля в 18-00 по Москве', content: ''},
+        {topic: 'Администрирование баз данных Oracle, Postgresql',
+        content: 'Курсы по администрированию серверов баз данных, настройка серверов'},
+      { topic: 'И далее каждый день, кроме субботы и воскресения, продолжительность занятия 40 минут', content: ''},
+      // {topic: 'Языки программирования Java, JavaScript (ECMAScript) - NodeJS, Python', content: 'Курсы по Python'},
+      // { topic: 'Разработка WEB приложений - ReactJS, Angular,Java Server Faces (JSF), Application Development Framework (ADF)',
+      //   content: 'Курсы По разработке Web приложений'},
+
+      // { topic: 'Администрирование серверов приложений Oracle Weblogic, IBM Sphere, RedHat Jboss-Wildfly', content: 'Курсы по администрированию серверов приложений'},
+      // {topic: 'Разработка корпоративных отчетов - Oracle BI', content: 'Курсы по разработке информационных витрин и отчетов в среде Oracle BI'},
+      // {topic: 'Разработка курсов под требования заказчика', content: 'Курсы, содержание которых определяет заказчик'},
+      // {topic: 'Проведение курсов на площадке клиента', content: 'Курсы, которые проводятся на площадке клиента'},
     ];
     topicName = '';
-  constructor(private dialog: MatDialog,) { }
+  constructor(private dialog: MatDialog, ) { }
 
   ngOnInit() {
   }

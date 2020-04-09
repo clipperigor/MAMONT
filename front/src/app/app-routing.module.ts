@@ -9,6 +9,7 @@ import {RegisterComponent} from './login/register-form';
 import {MamontComponent} from './components/mamont/mamont.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {TreeFilesVideoComponent} from './components/tree-files-video/tree-files-video.component';
+import {NewsComponent} from './components/news/news.component';
 
 
 // const routes: Routes = [{path: '', redirectTo: 'home' , pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent },
   {path: 'treevideo', component: TreeFilesVideoComponent },
+  {path: 'news', component: NewsComponent },
   {path: '**', component: NotFoundComponent},
 ];
 
