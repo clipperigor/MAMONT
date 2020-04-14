@@ -24,10 +24,13 @@
       <table>
         <tbody routerLink="/news">
         <tr><td> </td>
-        <td class="active invalid-feedback">Стоп гад! Серия бесплатных вебинаров - Оставайтесь Дома!</td>
+            <td class="topic"><a routerLink="/treevideo" >Доступ ко всем лекциям (не все доступны - нужно согласие!)</a></td>
         </tr>
         <tr><td> </td>
-            <td class="topic"><a routerLink="/treevideo" >Доступ ко всем лекциям (не все доступны - нужно согласие!)</a></td>
+            <td class="active invalid-feedback"><a routerLink="/webinar" >Стоп гад! Серия бесплатных вебинаров - Оставайтесь Дома!</a></td>
+        </tr>
+        <tr><td> </td>
+        <td class="topic"><a routerLink="/webinar" >График проведения бесплатных вебинаров (время московское)</a></td>
         </tr>
 
         <tr *ngFor="let topic of topics ; let i=index; let odd=odd"

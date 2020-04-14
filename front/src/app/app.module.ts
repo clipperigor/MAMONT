@@ -51,6 +51,7 @@ import { PlayerVideoComponent } from './components/player-video/player-video.com
 import {InfoServerClientComponent} from './components/info-server-client/info-server-client.component';
 import { TreeFilesVideoComponent } from './components/tree-files-video/tree-files-video.component';
 import { NewsComponent } from './components/news/news.component';
+import { WebinarComponent } from './components/webinar/webinar.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { NewsComponent } from './components/news/news.component';
       InfoServerClientComponent,
       TreeFilesVideoComponent,
       NewsComponent,
+      WebinarComponent,
   ],
   imports: [
     BrowserModule,
